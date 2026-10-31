@@ -1,7 +1,192 @@
 @import "tailwindcss";
 
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
+  --bg: #f4f5f7;
+  --surface: #ffffff;
+  --surface-sunken: #f3f5f8;
+  --surface-hover: #f3f5f8;
+  --border: #e4e7ec;
+  --border-strong: #cdd3db;
+  --border-control: #8c95a2;
+  --ink: #000d1a;
+  --ink-muted: #5b6472;
+  --ink-subtle: #7a8494;
+  --accent: #c4006a;
+  --accent-hover: #9e0056;
+  --accent-fill: #fe0089;
+  --accent-fill-hover: #e6007c;
+  --accent-tint: #ffe6f3;
+  --on-accent: #000d1a;
+  --focus-ring: #fe0089;
+  --good: #0b7a53;
+  --good-tint: #e2f5ec;
+  --bad: #b54708;
+  --bad-tint: #fdeee3;
+  --neutral-tint: #ebeef2;
+  --critical: #c0241b;
+  --on-critical: #ffffff;
+  --critical-tint: #fce8e6;
+  --critical-ink: #8f1c13;
+  --warning-tint: #fdeee3;
+  --warning-ink: #9a3f05;
+  --healthy-tint: #e2f5ec;
+  --healthy-ink: #0b6a48;
+  --info: #2f5bea;
+  --info-tint: #e8eefd;
+  --linkedin: #0b6375;
+  --linkedin-tint: #dff1f4;
+  --chart-current: #000d1a;
+  --chart-comparison: #9aa3af;
+  --chart-grid: #e9ecf0;
+  --chart-incomplete: #eef1f4;
+  --chart-1: #2f5bea;
+  --chart-2: #e07b24;
+  --chart-3: #13896f;
+  --chart-4: #8a5cd0;
+  --chart-5: #b8901a;
+  --chart-6: #6b7380;
+  --tile: #000d1a;
+  --scrim: rgb(0 13 26 / 32%);
+  --shadow-xs: 0 1px 2px rgb(0 13 26 / 6%);
+  --shadow-pop: 0 1px 2px rgb(0 13 26 / 6%), 0 16px 40px rgb(0 13 26 / 16%);
+  --background: var(--bg);
+  --foreground: var(--ink);
+  --card: var(--surface);
+  --card-foreground: var(--ink);
+  --popover: var(--surface);
+  --popover-foreground: var(--ink);
+  --primary: var(--accent-fill);
+  --primary-foreground: var(--on-accent);
+  --secondary: var(--surface);
+  --secondary-foreground: var(--ink);
+  --muted: var(--surface-sunken);
+  --muted-foreground: var(--ink-muted);
+  --destructive: var(--critical);
+  --destructive-foreground: var(--on-critical);
+  --input: var(--border-control);
+  --ring: var(--focus-ring);
+}
+
+.dark {
+  color-scheme: dark;
+  --bg: #000d1a;
+  --surface: #0d1e33;
+  --surface-sunken: #15293f;
+  --surface-hover: #13263c;
+  --border: #1e3049;
+  --border-strong: #33486a;
+  --border-control: #5f7391;
+  --ink: #f3f5f8;
+  --ink-muted: #a3aebe;
+  --ink-subtle: #7d8aa0;
+  --accent: #ff4fae;
+  --accent-hover: #ff7ac2;
+  --accent-fill: #fe0089;
+  --accent-fill-hover: #ff2e9a;
+  --accent-tint: #3a0a24;
+  --on-accent: #000d1a;
+  --focus-ring: #ff4fae;
+  --good: #48c79a;
+  --good-tint: #0e2e25;
+  --bad: #ffa266;
+  --bad-tint: #3a2010;
+  --neutral-tint: #1b2f48;
+  --critical: #ff7b70;
+  --on-critical: #1c0503;
+  --critical-tint: #3a1512;
+  --critical-ink: #ffb4ac;
+  --warning-tint: #3a2010;
+  --warning-ink: #ffb98a;
+  --healthy-tint: #0e2e25;
+  --healthy-ink: #7fdcbe;
+  --info: #8fa8ff;
+  --info-tint: #1a2650;
+  --linkedin: #6fd0e0;
+  --linkedin-tint: #0e2c33;
+  --chart-current: #e8ecf2;
+  --chart-comparison: #5b6f8c;
+  --chart-grid: #1b2f48;
+  --chart-incomplete: #13263c;
+  --chart-1: #8fa8ff;
+  --chart-2: #f59a4a;
+  --chart-3: #3fb896;
+  --chart-4: #b596f0;
+  --chart-5: #e0bc4a;
+  --chart-6: #8592a6;
+  --tile: #1e3049;
+  --scrim: rgb(0 0 0 / 55%);
+  --shadow-xs: 0 1px 2px rgb(0 0 0 / 60%);
+  --shadow-pop: 0 1px 2px rgb(0 0 0 / 60%), 0 16px 40px rgb(0 0 0 / 55%);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-sunken: var(--surface-sunken);
+  --color-surface-hover: var(--surface-hover);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-border-control: var(--border-control);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-subtle: var(--ink-subtle);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-fill: var(--accent-fill);
+  --color-accent-fill-hover: var(--accent-fill-hover);
+  --color-accent-tint: var(--accent-tint);
+  --color-on-accent: var(--on-accent);
+  --color-focus-ring: var(--focus-ring);
+  --color-good: var(--good);
+  --color-good-tint: var(--good-tint);
+  --color-bad: var(--bad);
+  --color-bad-tint: var(--bad-tint);
+  --color-neutral-tint: var(--neutral-tint);
+  --color-critical: var(--critical);
+  --color-on-critical: var(--on-critical);
+  --color-critical-tint: var(--critical-tint);
+  --color-critical-ink: var(--critical-ink);
+  --color-warning-tint: var(--warning-tint);
+  --color-warning-ink: var(--warning-ink);
+  --color-healthy-tint: var(--healthy-tint);
+  --color-healthy-ink: var(--healthy-ink);
+  --color-info: var(--info);
+  --color-info-tint: var(--info-tint);
+  --color-linkedin: var(--linkedin);
+  --color-linkedin-tint: var(--linkedin-tint);
+  --color-chart-current: var(--chart-current);
+  --color-chart-comparison: var(--chart-comparison);
+  --color-chart-grid: var(--chart-grid);
+  --color-chart-incomplete: var(--chart-incomplete);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-chart-6: var(--chart-6);
+  --color-tile: var(--tile);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-panel: 12px;
+  --shadow-pop: var(--shadow-pop);
 }
 
 * {
@@ -10,12 +195,52 @@
 
 html,
 body {
-  min-height: 100%;
+  height: 100%;
 }
 
 body {
   margin: 0;
-  background: Canvas;
-  color: CanvasText;
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-pulse-sans), "Segoe UI", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+.mono {
+  font-family: var(--font-pulse-mono), ui-monospace, monospace;
+}
+
+@media (pointer: coarse) {
+  .touch-control {
+    height: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
 }

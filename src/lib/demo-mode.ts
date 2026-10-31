@@ -4,11 +4,13 @@ type DemoModeEnvironment = {
 };
 
 export function isDemoModeEnabled(environment: DemoModeEnvironment): boolean {
-  const requested = environment.DEMO_DATA === "true";
+  if (environment.NODE_ENV === "production") {
+    if (environment.DEMO_DATA === "true") {
+      throw new Error("DEMO_DATA cannot be enabled in production.");
+    }
 
-  if (requested && environment.NODE_ENV === "production") {
-    throw new Error("DEMO_DATA cannot be enabled in production.");
+    return false;
   }
 
-  return requested;
+  return environment.DEMO_DATA !== "false";
 }

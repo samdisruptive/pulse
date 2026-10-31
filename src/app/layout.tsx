@@ -1,6 +1,21 @@
 import type { Metadata } from "next";
+import { IBM_Plex_Mono, Plus_Jakarta_Sans } from "next/font/google";
+
+import { ThemeProvider } from "@/components/theme-provider";
 
 import "./globals.css";
+
+const sans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-pulse-sans",
+});
+
+const mono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-pulse-mono",
+});
 
 export const metadata: Metadata = {
   title: "Pulse",
@@ -13,8 +28,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-GB">
-      <body>{children}</body>
+    <html className={`${sans.variable} ${mono.variable}`} lang="en-GB" suppressHydrationWarning>
+      <body>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }

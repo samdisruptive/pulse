@@ -3,14 +3,15 @@ import { describe, expect, it } from "vitest";
 import { isDemoModeEnabled } from "./demo-mode";
 
 describe("isDemoModeEnabled", () => {
-  it("is disabled unless explicitly requested", () => {
-    expect(isDemoModeEnabled({ NODE_ENV: "development" })).toBe(false);
+  it("is available for local review unless explicitly disabled", () => {
+    expect(isDemoModeEnabled({ NODE_ENV: "development" })).toBe(true);
+    expect(
+      isDemoModeEnabled({ DEMO_DATA: "false", NODE_ENV: "development" }),
+    ).toBe(false);
   });
 
-  it("can be enabled outside production", () => {
-    expect(
-      isDemoModeEnabled({ DEMO_DATA: "true", NODE_ENV: "development" }),
-    ).toBe(true);
+  it("stays disabled in production", () => {
+    expect(isDemoModeEnabled({ NODE_ENV: "production" })).toBe(false);
   });
 
   it("rejects demo data in production", () => {

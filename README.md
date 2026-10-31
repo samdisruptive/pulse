@@ -3,9 +3,10 @@
 Pulse is Digitally Disruptive's internal client intelligence, reporting and
 operations platform. It is not a public SaaS product.
 
-This repository currently contains the M0 application foundation. Product
-behaviour is specified in [`docs/handoff.md`](docs/handoff.md), with the
-interactive prototype and design tokens under [`docs/reference`](docs/reference).
+This repository contains the M1 visual foundation on top of the M0
+application scaffold. Product behaviour is specified in
+[`docs/handoff.md`](docs/handoff.md), with the interactive prototype and
+design tokens under [`docs/reference`](docs/reference).
 
 ## Requirements
 
@@ -64,16 +65,27 @@ secrets must never cross the server boundary.
 
 ## Demo mode
 
-Demo data will live behind explicit adapters and will never share production
-storage paths. `DEMO_DATA=true` is rejected when `NODE_ENV=production`. No demo
-fixtures are included in this milestone.
+Demo fixtures live only in `src/demo` and are labelled in the interface. They
+never share a production database. Local development shows them unless
+`DEMO_DATA=false`. Production rejects `DEMO_DATA=true` and renders no catalogue.
 
 ## Milestones
 
-The next proposed milestone is an early visual review: design tokens, the Pulse
-application shell and core dashboard components based on the supplied
-prototype. Backend platform work begins only after that interface is reviewed.
+M1 is the approved visual foundation: design tokens, the application shell,
+reusable dashboard components, and demo overview screens. Local development
+keeps showing those fixtures until a later milestone reads the database.
 An early staging deployment is planned after authentication and the application
 foundation are complete.
 
 Work stops for review after every approved milestone.
+
+## Outstanding visual work
+
+These screens and controls shipped with M1 and are still unfinished:
+
+- Reports, integrations, agency settings and AI settings are headings with explanatory copy.
+- Client sections share one demo chart. Their tabs are labels, not links. A section the client has not connected shows that gap instead of zeroes.
+- Significant changes on the agency overview explains that demo signals are not stored as issues.
+- Export and notifications have no behaviour. Closing an issue drawer leaves an empty `issue` parameter in the URL.
+- Ask AI opens a placeholder panel on wide screens. Summarise with AI and Generate report do not call a model.
+- The logo is a stand-in until the final mark is supplied.

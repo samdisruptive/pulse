@@ -1,0 +1,19 @@
+---
+description: Pulse project rules
+alwaysApply: true
+---
+
+- Product: Pulse by Disruptive, an internal reporting and monitoring platform for Digitally Disruptive staff. Not a public SaaS product.
+- Visual reference: docs/reference/pulse-prototype.html. Match its layout, spacing, typography, colours and interactions. Do not copy its code or simulated data.
+- Design tokens: docs/reference/pulse-design-tokens.json. Never hard-code hex values in components; use the CSS variables and Tailwind tokens defined in Prompt 2.
+- Copy: British English, sentence case, no em dashes anywhere in the UI (use a full stop, comma or middle dot). Dates as "22 Sep", "17 Oct 04:10" (24-hour), ranges as "22 Sep - 19 Oct". Currency with symbol and thousands separators: "£412,860", "€38,900".
+- Pink means "you can act": solid pink only on the primary button; pink text and icons for links and AI actions; never pink for data, status or severity.
+- Every metric shown to users carries a source tier: Actual, Measured, Platform-reported, Google-reported, Crawler-detected or Derived. Never add values from different tiers together, and never add conversions from different ad platforms together.
+- Changes are coloured by judgement (better, worse, neutral) using the metric's betterWhen setting, not by arrow direction.
+- Missing data is never estimated or shown as zero. Show the gap, the reason and the freshness.
+- Server-only code lives in src/server and imports "server-only". Secrets, API keys and OAuth tokens never reach the browser.
+- Every server action and route handler checks authentication and permissions before touching data.
+- Validate all external input (forms, query strings, provider responses) with zod.
+- Prefer Server Components for data fetching; use Client Components only for interactivity.
+- Keep components small and reusable. Feature code goes in src/features/<feature>.
+- Write tests for logic (metrics, permissions, providers, jobs). Every prompt ends with lint, typecheck and tests passing.

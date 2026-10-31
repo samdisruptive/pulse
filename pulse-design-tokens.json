@@ -1,0 +1,640 @@
+{
+  "name": "Pulse",
+  "version": 2,
+  "color": {
+    "themes": [
+      {
+        "id": "light",
+        "name": "Light"
+      },
+      {
+        "id": "dark",
+        "name": "Dark"
+      }
+    ],
+    "tokens": [
+      {
+        "name": "bg",
+        "value": {
+          "light": "#f4f5f7",
+          "dark": "#000d1a"
+        },
+        "usage": "Page background, sidebar and top bar. Cool light grey in light mode; the Disruptive navy in dark mode."
+      },
+      {
+        "name": "surface",
+        "value": {
+          "light": "#ffffff",
+          "dark": "#0d1e33"
+        },
+        "usage": "Cards, tables, drawers, menus. The default ground for text."
+      },
+      {
+        "name": "surface-sunken",
+        "value": {
+          "light": "#f3f5f8",
+          "dark": "#15293f"
+        },
+        "usage": "The shaded panel inside cards: KPI values, mini metrics, AI evidence, contact boxes. Also the segmented control track."
+      },
+      {
+        "name": "surface-hover",
+        "value": {
+          "light": "#f3f5f8",
+          "dark": "#13263c"
+        },
+        "usage": "Row and list hover."
+      },
+      {
+        "name": "border",
+        "value": {
+          "light": "#e4e7ec",
+          "dark": "#1e3049"
+        },
+        "usage": "Card edges and table rules. Decorative, so allowed below 3:1."
+      },
+      {
+        "name": "border-strong",
+        "value": {
+          "light": "#cdd3db",
+          "dark": "#33486a"
+        },
+        "usage": "Button and picker outlines, tier tags. Buttons carry text, so the outline is decorative."
+      },
+      {
+        "name": "border-control",
+        "value": {
+          "light": "#8c95a2",
+          "dark": "#5f7391"
+        },
+        "usage": "Edges that identify an input: search fields, selects, checkboxes. Meets 3:1 on surface."
+      },
+      {
+        "name": "ink",
+        "value": {
+          "light": "#000d1a",
+          "dark": "#f3f5f8"
+        },
+        "usage": "Primary text, KPI values and the current-period chart line. The light theme ink is the brand navy."
+      },
+      {
+        "name": "ink-muted",
+        "value": {
+          "light": "#5b6472",
+          "dark": "#a3aebe"
+        },
+        "usage": "Labels, metadata, column headers, inactive nav. AA on every surface."
+      },
+      {
+        "name": "ink-subtle",
+        "value": {
+          "light": "#7a8494",
+          "dark": "#7d8aa0"
+        },
+        "usage": "Placeholders and 24px+ text only."
+      },
+      {
+        "name": "accent",
+        "value": {
+          "light": "#c4006a",
+          "dark": "#ff4fae"
+        },
+        "usage": "Pink for text, icons and outlines: links, the Ask AI icon, selected states. A deeper or lifted pink than the brand fill so small text passes AA."
+      },
+      {
+        "name": "accent-hover",
+        "value": {
+          "light": "#9e0056",
+          "dark": "#ff7ac2"
+        },
+        "usage": "Hover state for accent text and links."
+      },
+      {
+        "name": "accent-fill",
+        "value": {
+          "light": "#fe0089",
+          "dark": "#fe0089"
+        },
+        "usage": "The exact brand pink, used as a fill: the primary button only. Always with on-accent text."
+      },
+      {
+        "name": "accent-fill-hover",
+        "value": {
+          "light": "#e6007c",
+          "dark": "#ff2e9a"
+        },
+        "usage": "Hover for the primary button."
+      },
+      {
+        "name": "accent-tint",
+        "value": {
+          "light": "#ffe6f3",
+          "dark": "#3a0a24"
+        },
+        "usage": "The active nav pill and client tiles."
+      },
+      {
+        "name": "on-accent",
+        "value": {
+          "light": "#000d1a",
+          "dark": "#000d1a"
+        },
+        "usage": "Text on accent-fill. Navy, because white on the brand pink fails AA."
+      },
+      {
+        "name": "focus-ring",
+        "value": {
+          "light": "#fe0089",
+          "dark": "#ff4fae"
+        },
+        "usage": "2px keyboard focus outline."
+      },
+      {
+        "name": "good",
+        "value": {
+          "light": "#0b7a53",
+          "dark": "#48c79a"
+        },
+        "usage": "A change that is better for the client, whichever way it moved."
+      },
+      {
+        "name": "good-tint",
+        "value": {
+          "light": "#e2f5ec",
+          "dark": "#0e2e25"
+        },
+        "usage": "Background of a better change tag."
+      },
+      {
+        "name": "bad",
+        "value": {
+          "light": "#b54708",
+          "dark": "#ffa266"
+        },
+        "usage": "A change that is worse for the client. Orange, so red stays free for critical."
+      },
+      {
+        "name": "bad-tint",
+        "value": {
+          "light": "#fdeee3",
+          "dark": "#3a2010"
+        },
+        "usage": "Background of a worse change tag."
+      },
+      {
+        "name": "neutral-tint",
+        "value": {
+          "light": "#ebeef2",
+          "dark": "#1b2f48"
+        },
+        "usage": "Neutral tags, flat changes, counts."
+      },
+      {
+        "name": "critical",
+        "value": {
+          "light": "#c0241b",
+          "dark": "#ff7b70"
+        },
+        "usage": "Critical severity: the only solid-fill badge."
+      },
+      {
+        "name": "on-critical",
+        "value": {
+          "light": "#ffffff",
+          "dark": "#1c0503"
+        },
+        "usage": "Text on a critical fill."
+      },
+      {
+        "name": "critical-tint",
+        "value": {
+          "light": "#fce8e6",
+          "dark": "#3a1512"
+        },
+        "usage": "Critical banners."
+      },
+      {
+        "name": "critical-ink",
+        "value": {
+          "light": "#8f1c13",
+          "dark": "#ffb4ac"
+        },
+        "usage": "Text on critical-tint."
+      },
+      {
+        "name": "warning-tint",
+        "value": {
+          "light": "#fdeee3",
+          "dark": "#3a2010"
+        },
+        "usage": "Warning badges and banners."
+      },
+      {
+        "name": "warning-ink",
+        "value": {
+          "light": "#9a3f05",
+          "dark": "#ffb98a"
+        },
+        "usage": "Text on warning-tint."
+      },
+      {
+        "name": "healthy-tint",
+        "value": {
+          "light": "#e2f5ec",
+          "dark": "#0e2e25"
+        },
+        "usage": "Healthy and resolved badges."
+      },
+      {
+        "name": "healthy-ink",
+        "value": {
+          "light": "#0b6a48",
+          "dark": "#7fdcbe"
+        },
+        "usage": "Text on healthy-tint."
+      },
+      {
+        "name": "info",
+        "value": {
+          "light": "#2f5bea",
+          "dark": "#8fa8ff"
+        },
+        "usage": "Informational badges and the Meta source tag. Blue, never pink."
+      },
+      {
+        "name": "info-tint",
+        "value": {
+          "light": "#e8eefd",
+          "dark": "#1a2650"
+        },
+        "usage": "Background for info badges, info banners and the Meta tag."
+      },
+      {
+        "name": "linkedin",
+        "value": {
+          "light": "#0b6375",
+          "dark": "#6fd0e0"
+        },
+        "usage": "LinkedIn source tag text."
+      },
+      {
+        "name": "linkedin-tint",
+        "value": {
+          "light": "#dff1f4",
+          "dark": "#0e2c33"
+        },
+        "usage": "LinkedIn source tag background."
+      },
+      {
+        "name": "chart-current",
+        "value": {
+          "light": "#000d1a",
+          "dark": "#e8ecf2"
+        },
+        "usage": "The selected period in single-metric charts and KPI trend lines."
+      },
+      {
+        "name": "chart-comparison",
+        "value": {
+          "light": "#9aa3af",
+          "dark": "#5b6f8c"
+        },
+        "usage": "The comparison period, dashed."
+      },
+      {
+        "name": "chart-grid",
+        "value": {
+          "light": "#e9ecf0",
+          "dark": "#1b2f48"
+        },
+        "usage": "Horizontal gridlines only."
+      },
+      {
+        "name": "chart-incomplete",
+        "value": {
+          "light": "#eef1f4",
+          "dark": "#13263c"
+        },
+        "usage": "Shading behind days still processing."
+      },
+      {
+        "name": "chart-1",
+        "value": {
+          "light": "#2f5bea",
+          "dark": "#8fa8ff"
+        },
+        "usage": "First categorical series."
+      },
+      {
+        "name": "chart-2",
+        "value": {
+          "light": "#e07b24",
+          "dark": "#f59a4a"
+        },
+        "usage": "Second categorical series."
+      },
+      {
+        "name": "chart-3",
+        "value": {
+          "light": "#13896f",
+          "dark": "#3fb896"
+        },
+        "usage": "Third categorical series."
+      },
+      {
+        "name": "chart-4",
+        "value": {
+          "light": "#8a5cd0",
+          "dark": "#b596f0"
+        },
+        "usage": "Fourth categorical series."
+      },
+      {
+        "name": "chart-5",
+        "value": {
+          "light": "#b8901a",
+          "dark": "#e0bc4a"
+        },
+        "usage": "Fifth categorical series."
+      },
+      {
+        "name": "chart-6",
+        "value": {
+          "light": "#6b7380",
+          "dark": "#8592a6"
+        },
+        "usage": "Other."
+      },
+      {
+        "name": "brand-navy",
+        "value": {
+          "light": "#000d1a",
+          "dark": "#000d1a"
+        },
+        "usage": "Official Disruptive navy. Logo tile, report covers."
+      },
+      {
+        "name": "brand-pink",
+        "value": {
+          "light": "#fe0089",
+          "dark": "#fe0089"
+        },
+        "usage": "Official Disruptive pink. Primary button fill, covers."
+      },
+      {
+        "name": "tile",
+        "value": {
+          "light": "#000d1a",
+          "dark": "#1e3049"
+        },
+        "usage": "Background behind the white logo mark in the app."
+      },
+      {
+        "name": "brand-panel",
+        "value": {
+          "light": "#000d1a",
+          "dark": "#121e2e"
+        },
+        "usage": "A navy brand block that stays visible in both themes: covers only."
+      }
+    ]
+  },
+  "type": {
+    "fonts": [],
+    "families": {
+      "sans": "\"Plus Jakarta Sans\", ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", sans-serif",
+      "mono": "\"IBM Plex Mono\", ui-monospace, \"SF Mono\", Menlo, Consolas, monospace"
+    },
+    "groups": [
+      {
+        "name": "Interface",
+        "family": "sans",
+        "styles": [
+          {
+            "name": "page-title",
+            "fontSize": "26px",
+            "lineHeight": "32px",
+            "fontWeight": 700,
+            "letterSpacing": "-0.02em",
+            "sample": "Kestrel Outdoor",
+            "usage": "One per page. Sentence case, never uppercase."
+          },
+          {
+            "name": "section-title",
+            "fontSize": "15px",
+            "lineHeight": "22px",
+            "fontWeight": 700,
+            "sample": "Needs attention",
+            "usage": "Card and section headings, with a header icon."
+          },
+          {
+            "name": "card-label",
+            "fontSize": "14px",
+            "lineHeight": "20px",
+            "fontWeight": 600,
+            "sample": "Store revenue",
+            "usage": "KPI card titles, next to the metric icon."
+          },
+          {
+            "name": "body",
+            "fontSize": "14px",
+            "lineHeight": "20px",
+            "fontWeight": 400,
+            "sample": "Store orders held steady while Meta purchase events fell.",
+            "usage": "Default text."
+          },
+          {
+            "name": "body-sm",
+            "fontSize": "13px",
+            "lineHeight": "18px",
+            "fontWeight": 400,
+            "sample": "Tracking · Paid media · 2 days",
+            "usage": "Table cells, metadata under titles."
+          },
+          {
+            "name": "label",
+            "fontSize": "12px",
+            "lineHeight": "16px",
+            "fontWeight": 600,
+            "sample": "Revenue",
+            "usage": "Column headers, tags, field labels."
+          },
+          {
+            "name": "caption",
+            "fontSize": "12px",
+            "lineHeight": "16px",
+            "fontWeight": 400,
+            "sample": "Shopify · 4 stores · synced 08:05",
+            "usage": "Source and freshness lines."
+          }
+        ]
+      },
+      {
+        "name": "Data",
+        "family": "sans",
+        "styles": [
+          {
+            "name": "kpi-xl",
+            "fontSize": "26px",
+            "lineHeight": "30px",
+            "fontWeight": 700,
+            "letterSpacing": "-0.02em",
+            "sample": "£412,860",
+            "usage": "KPI values inside the shaded panel. Tabular figures."
+          },
+          {
+            "name": "kpi-md",
+            "fontSize": "20px",
+            "lineHeight": "26px",
+            "fontWeight": 700,
+            "letterSpacing": "-0.01em",
+            "sample": "41,200",
+            "usage": "Mini metrics in section cards."
+          },
+          {
+            "name": "data",
+            "fontSize": "13px",
+            "lineHeight": "18px",
+            "fontWeight": 400,
+            "sample": "182,400   2.86%   £76.39",
+            "usage": "Numbers in tables. Tabular figures, right-aligned."
+          }
+        ]
+      },
+      {
+        "name": "Code",
+        "family": "mono",
+        "styles": [
+          {
+            "name": "code",
+            "fontSize": "12px",
+            "lineHeight": "18px",
+            "fontWeight": 400,
+            "sample": "urn:li:leadFormResponse:7381920456",
+            "usage": "URLs, IDs and server addresses only."
+          }
+        ]
+      }
+    ]
+  },
+  "spacing": {
+    "note": "4px base. Cards pad 12 to 16px, page gutters 24px, gaps between cards 14 to 16px.",
+    "tokens": [
+      {
+        "name": "space-1",
+        "value": "4px",
+        "usage": "Icon to text."
+      },
+      {
+        "name": "space-2",
+        "value": "8px",
+        "usage": "Gaps inside controls, between tags."
+      },
+      {
+        "name": "space-3",
+        "value": "12px",
+        "usage": "Card padding for KPI cards; padding inside the shaded panel's neighbours."
+      },
+      {
+        "name": "space-4",
+        "value": "16px",
+        "usage": "Card padding, gaps between cards."
+      },
+      {
+        "name": "space-6",
+        "value": "24px",
+        "usage": "Page gutters."
+      },
+      {
+        "name": "space-8",
+        "value": "32px",
+        "usage": "Empty states."
+      }
+    ]
+  },
+  "radius": {
+    "tokens": [
+      {
+        "name": "radius-sm",
+        "value": "6px",
+        "usage": "Badges, tier tags, severity tags."
+      },
+      {
+        "name": "radius-md",
+        "value": "10px",
+        "usage": "Buttons, inputs, nav items, logo tile."
+      },
+      {
+        "name": "radius-panel",
+        "value": "12px",
+        "usage": "The shaded panel inside cards."
+      },
+      {
+        "name": "radius-lg",
+        "value": "16px",
+        "usage": "Cards, drawers, menus."
+      },
+      {
+        "name": "radius-full",
+        "value": "999px",
+        "usage": "Change tags and status dots."
+      }
+    ]
+  },
+  "shadow": {
+    "note": "Borders, not shadows. Only floating layers get one.",
+    "tokens": [
+      {
+        "name": "shadow-xs",
+        "value": {
+          "light": "0 1px 2px rgba(0,13,26,0.08)",
+          "dark": "0 1px 2px rgba(0,0,0,0.6)"
+        },
+        "usage": "Selected segment."
+      },
+      {
+        "name": "shadow-pop",
+        "value": {
+          "light": "0 1px 2px rgba(0,13,26,0.06), 0 16px 40px rgba(0,13,26,0.16)",
+          "dark": "0 1px 2px rgba(0,0,0,0.6), 0 16px 40px rgba(0,0,0,0.55)"
+        },
+        "usage": "Menus, popovers, drawers, the AI panel on small screens."
+      }
+    ]
+  },
+  "size": {
+    "note": "Desktop density; every control steps up to 44px on touch screens.",
+    "tokens": [
+      {
+        "name": "control-sm",
+        "value": "30px",
+        "usage": "Buttons in rows and cards."
+      },
+      {
+        "name": "control-md",
+        "value": "36px",
+        "usage": "Default buttons, pickers, inputs."
+      },
+      {
+        "name": "control-lg",
+        "value": "44px",
+        "usage": "All controls on touch devices."
+      },
+      {
+        "name": "row-default",
+        "value": "42px",
+        "usage": "Table rows."
+      },
+      {
+        "name": "sidebar-width",
+        "value": "240px",
+        "usage": "Sidebar. Becomes a slide-out menu below 980px."
+      },
+      {
+        "name": "ai-panel-width",
+        "value": "420px",
+        "usage": "Docked AI analyst panel. Overlays below 1200px."
+      }
+    ]
+  }
+}
